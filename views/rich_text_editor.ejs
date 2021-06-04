@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<title>Admin Panel Post</title>
+<meta charset="utf-8">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+<link rel="stylesheet" href="assets/css/main.css">
+
+<link rel="stylesheet" href="assets/css/owl-carousel.css">
+<script type="text/javascript" src="js/jquery.js"></script> 
+<script type="text/javascript" src="js/bootstrap.js"></script> 
+<script type="text/javascript" src="js/bootstrap-wysiwyg.js"></script> 
+
+
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<style>
+  .active{color: #3f51b5;}
+h1 span{border-bottom: 8px solid #3f51b5;border-radius: 5px;}
+.content{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 150px;
+}
+
+
+#editor {
+	max-height: 150px;
+	height: 150px;
+	background-color: white;
+	border-collapse: separate; 
+	border: 1px solid rgb(204, 204, 204); 
+	padding: 10px; 
+	box-sizing: content-box; 
+	overflow: auto;
+	outline: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#voiceBtn {
+  width: 20px;
+  color: transparent;
+  background-color: transparent;
+  transform: scale(2.0, 2.0);
+  -webkit-transform: scale(2.0, 2.0);
+  -moz-transform: scale(2.0, 2.0);
+  border: transparent;
+  cursor: pointer;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+div[data-role="editor-toolbar"] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#upload {
+    opacity: 0;
+}
+
+#upload-label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.image-area {
+    border: 2px dashed rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    position: relative;
+}
+
+.image-area::before {
+    content: 'Uploaded image result';
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    z-index: 1;
+}
+
+.image-area img {
+    z-index: 2;
+    position: relative;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background-image: linear-gradient(147deg, #3f51b5 0%, #d7dde8 100%);
+}
+
+
+
+</style>
+
+<script src="external/jquery.hotkeys.js"></script>
+<script src="external/google-code-prettify/prettify.js"></script>
+<script src="js/bootstrap-wysiwyg.js"></script>
+<script language="javascript">
+function loadVal(){
+	desc = $("#editor").html();
+	document.form1.desc.value = desc;
+}
+</script>
+</head>
+<body>
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="/" class="logo" style="color: white;">
+                        Prowatermark
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="submenu">
+                            <a href="javascript:;">Admin Panel</a>
+                            <ul>
+                                <li><a href="/rich_text_editor" class="menu-item">Post</a></li>
+                            </ul>
+                        </li>
+                        <li class=""><a href="/" class="menu-item" onclick="window.location.href='/'">Home</a></li>
+                        <li class=""><a href="/watermarkPRO" class="menu-item" onclick="window.location.href='/watermarkPRO'">Watermark Photos</a></li>
+                        <li class=""><a href="/blog" class="menu-item" onclick="window.location.href='/blog'">Blog</a></li>
+                        <li class=""><a href="/logout" class="menu-item active" onclick="window.location.href='/logout'">Log-out</a></li>
+    
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container py-5">
+
+  <!-- For demo purpose -->
+
+  <form method="POST" name="form1" action="#" onsubmit="loadVal();">
+
+    <div class="content">
+    
+    
+        <div id="editor"> Enter your text here.. </div>
+        
+    <textarea rows="2" name="desc" cols="20" style="display:none;"> Enter your text here.. </textarea>
+        
+    
+    <br/>
+    <input type="submit" value="Post" name="B1" class="btn btn-primary btn-large" >
+    </div>    
+    </form>
+
+  <div class="row py-4">
+      <div class="col-lg-6 mx-auto">
+
+          <!-- Upload image input-->
+          <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+              <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+              <label id="upload-label" for="upload" class="font-weight-light text-muted">Upload Images</label>
+              <div class="input-group-append">
+                  <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose photos</small></label>
+              </div>
+          </div>
+
+          <!-- Uploaded image area-->
+          <p class="font-italic text-dark text-center">The image uploaded will be rendered inside the box below.</p>
+          <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+<script>
+  $(function(){
+    function initToolbarBootstrapBindings() {
+     
+	};
+	function showErrorAlert (reason, detail) {
+		var msg='';
+		if (reason==='unsupported-file-type') { msg = "Unsupported format " +detail; }
+		else {
+			console.log("error uploading file", reason, detail);
+		}
+		$('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'+ 
+		 '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
+	};
+    initToolbarBootstrapBindings();  
+	$('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
+    window.prettyPrint && prettyPrint();
+  });
+  function previewFile(input){
+        var file = $("input[type=file]").get(0).files[0];
+ 
+        if(file){
+            var reader = new FileReader();
+ 
+            reader.onload = function(){
+                $("#previewImg").attr("src", reader.result);
+            }
+ 
+            reader.readAsDataURL(file);
+        }
+    }
+
+
+    $(document).ready( function() {
+    	$(document).on('change', '.btn-file :file', function() {
+		var input = $(this),
+			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+		input.trigger('fileselect', [label]);
+		});
+
+		$('.btn-file :file').on('fileselect', function(event, label) {
+		    
+		    var input = $(this).parents('.input-group').find(':text'),
+		        log = label;
+		    
+		    if( input.length ) {
+		        input.val(log);
+		    } else {
+		        if( log ) alert(log);
+		    }
+	    
+		});
+		function readURL(input) {
+		    if (input.files && input.files[0]) {
+		        var reader = new FileReader();
+		        
+		        reader.onload = function (e) {
+		            $('#img-upload').attr('src', e.target.result);
+		        }
+		        
+		        reader.readAsDataURL(input.files[0]);
+		    }
+		}
+
+		$("#imgInp").change(function(){
+		    readURL(this);
+		}); 	
+	});
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imageResult')
+                .attr('src', e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$(function () {
+    $('#upload').on('change', function () {
+        readURL(input);
+    });
+});
+
+/*  ==========================================
+    SHOW UPLOADED IMAGE NAME
+* ========================================== */
+var input = document.getElementById( 'upload' );
+var infoArea = document.getElementById( 'upload-label' );
+
+input.addEventListener( 'change', showFileName );
+function showFileName( event ) {
+  var input = event.srcElement;
+  var fileName = input.files[0].name;
+  infoArea.textContent = 'File name: ' + fileName;
+}
+</script>
+</body>
+</html>

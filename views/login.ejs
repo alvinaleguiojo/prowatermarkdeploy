@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Login to Prowatermark</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="assets/css/templatemo-lava.css">
+
+    <link rel="stylesheet" href="assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="assets/css/login.css">
+
+    <style>
+      .loginheader{
+        margin-top: 5rem!important;
+      }
+    </style>
+
+</head>
+
+<body>
+    <script src="https://kit.fontawesome.com/712bd1b100.js" crossorigin="anonymous"></script>
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                            Prowatermark
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class=""><a href="/" class="menu-item" onclick="window.location.href='/'">Home</a></li>                         
+                            <li class=""><a href="/watermark" class="menu-item" onclick="window.location.href='/watermark'">Watermark Photos</a></li>
+                            <li class=""><a href="/login" class="menu-item" onclick="window.location.href='/login'">Login</a></li>
+                            <li class=""><a href="/signup" class="menu-item" onclick="window.location.href='/signup'"><span>Sign Up</span></a></li>
+        
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+  
+
+    <div class="container-fluid">
+        <div class="row no-gutter mt-5 loginheader">
+          <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+          <div class="col-md-8 col-lg-6">
+            <div class="login d-flex align-items-center py-5">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-9 col-lg-8 mx-auto">
+                    <h3 class="login-heading mb-4">Welcome back!</h3>
+                    <form  action="auth_login" method="POST">
+                      <div class="form-label-group">
+                        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required autofocus>
+                        <label for="inputEmail">Email address</label>
+                      </div>
+      
+                      <div class="form-label-group">
+                        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+                        <label for="inputPassword">Password</label>
+                      </div>
+      
+                      <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">Remember password</label>
+                      </div>
+                      <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                      <div class="text-center">
+                        <a class="small" href="#"  data-target="#pwdModal" data-toggle="modal">Forgot password?</a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+         <!--modal-->
+         <div id="pwdModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3 class="text-center">What's My Password?</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              </div>
+              <div class="modal-body">
+                  <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center">
+                                  <p>If you have forgotten your password you can reset it here.</p>
+                                    <div class="panel-body mt-3">
+                                      <form action="/forgot-password" method="POST">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <input class="form-control input-lg" placeholder="E-mail Address" name="email" type="email">
+                                            </div>
+                                            <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit">
+                                        </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+              <div class="modal-footer">
+                  <div class="col-md-12">
+                  <button class="btn float-right" data-dismiss="modal" aria-hidden="true">Cancel</button>
+              </div>	
+              </div>
+          </div>
+          </div>
+        </div>
+      
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script>
+
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+</html>

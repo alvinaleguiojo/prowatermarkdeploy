@@ -1,0 +1,91 @@
+body, html {
+    height: 100%;
+  }
+  .parallax {
+    /* The image used */
+    background-image: url(/assets/images/1_parallax.png);
+  
+    /* Full height */
+    height: 80%; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+  }
+
+  .parallax > h1{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -9px;
+  }
+  /* SECOND PARALLAX */
+  .parallaxA{
+        /* The image used */
+    background-image: url(/assets/images/2_parallax.png);
+  
+    /* Full height */
+    height: 80%; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+  }
+  .col-md-6 > p{
+      font-size: 1em;
+  }
+  .parallaxA > h1{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -9px;
+  }
+    /* THIRD PARALLAX */
+.parallaxB{
+      /* The image used */
+  background-image: url(/assets/images/3_parallax.png);
+
+  /* Full height */
+  height: 80%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+}
+.parallaxB > h1{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: -9px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* For mobile phones: */
+  section{
+    height: 500px;
+  }
+}
+  
+
+ 
